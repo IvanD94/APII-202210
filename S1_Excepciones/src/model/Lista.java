@@ -31,7 +31,8 @@ public class Lista {
 			}
 			objects[idx] = element;
 		} catch (ArrayIndexOutOfBoundsException e) {
-			throw new ListaLlenaException(element, e);
+			throw new ListaLlenaException(element);
+			//throw new ListaLlenaException(element, e);
 		}
 	}
 

@@ -23,5 +23,15 @@ public class ListaTest {
 		assertTrue("El elemento no quedo agregado a la lista", lista.searchElement(3));
 		assertEquals("El tamaño de la lista no es 1", 1, lista.countElements());
 	}
+	
+	@Test
+	public void test2() {
+		assertEquals(0.1 + 0.1 + 0.1, 0.3, 0.0000001);
+		assertFalse(false);
+		assertTrue(false);
+		assertNull(lista);
+		assertNotNull(lista);
+		fail();
+	}
 
 }
