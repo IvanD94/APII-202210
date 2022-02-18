@@ -5,6 +5,7 @@ import java.io.IOException;
 import controller.LoginController;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import model.Users;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
@@ -12,10 +13,16 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	
+	private Users users;
+	
 	private Stage currentStage;
 	
 	@Override
 	public void start(Stage primaryStage) {
+		
+		users = new Users();
+		users.addUser("admin", "1234");
+		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/Login.fxml"));
 			
@@ -23,6 +30,7 @@ public class Main extends Application {
 			
 			LoginController controller = loader.getController();
 			controller.setMain(this);
+			controller.setUsers(users);
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("../ui/application.css").toExternalForm());
