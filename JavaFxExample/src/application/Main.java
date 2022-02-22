@@ -62,14 +62,32 @@ public class Main extends Application {
 			root = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/gui.fxml"));
 			Scene scene = new Scene(root); //Contenido de la ventana
 			stage.setScene(scene);
-			currentStage.close();
+			//currentStage.close();
 			stage.show();
-			currentStage = stage;
+			//currentStage = stage;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	public void showCalculatorSameStage() {
+		try {
+			BorderPane root;
+			BorderPane calculator = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/gui.fxml"));
+			
+			Stage stage = currentStage;
+			root = (BorderPane)stage.getScene().getRoot();
+			root.setCenter(calculator);
+			//currentStage.close();
+			stage.show();
+			//currentStage = stage;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	public void showMainView() {
 		try {

@@ -14,7 +14,7 @@ public class MainController {
 	
 	@FXML
 	public void openCalculator() {
-		main.showCalculator();
+		main.showCalculatorSameStage();
 	}
 	
 	public void setMain(Main main) {
