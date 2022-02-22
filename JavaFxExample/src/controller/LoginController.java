@@ -30,7 +30,7 @@ public class LoginController {
 	
 		try {
 			users.validate(user, password); //Lanza
-			main.showCalculator();		
+			main.showMainView();		
 		} catch (UserNotFoundException | PasswordNotMatchException e) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error Dialog");
