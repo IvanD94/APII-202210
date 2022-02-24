@@ -17,6 +17,11 @@ public class MainController {
 		main.showCalculatorSameStage();
 	}
 	
+	@FXML
+	public void openHistorial() {
+		main.showHistorial();
+	}
+	
 	public void setMain(Main main) {
 		this.main = main;
 	}

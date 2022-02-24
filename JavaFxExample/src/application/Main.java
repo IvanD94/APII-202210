@@ -77,6 +77,7 @@ public class Main extends Application {
 			BorderPane calculator = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/gui.fxml"));
 			
 			Stage stage = currentStage;
+			currentStage.setFullScreen(true);
 			root = (BorderPane)stage.getScene().getRoot();
 			root.setCenter(calculator);
 			//currentStage.close();
@@ -88,6 +89,20 @@ public class Main extends Application {
 		}
 	}
 	
+	public void showHistorial() {
+		try {
+			Stage stage = new Stage();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/CalculatorRecord.fxml"));
+			BorderPane root = loader.load();
+			
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public void showMainView() {
 		try {
