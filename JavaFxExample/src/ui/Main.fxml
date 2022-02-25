@@ -29,6 +29,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#openHistorial" text="Historial" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Contactos">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#showContacts" text="Ver" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

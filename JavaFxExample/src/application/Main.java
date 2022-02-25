@@ -75,9 +75,8 @@ public class Main extends Application {
 		try {
 			BorderPane root;
 			BorderPane calculator = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/gui.fxml"));
-			
 			Stage stage = currentStage;
-			currentStage.setFullScreen(true);
+			//currentStage.setFullScreen(true);
 			root = (BorderPane)stage.getScene().getRoot();
 			root.setCenter(calculator);
 			//currentStage.close();
@@ -132,5 +131,18 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public void showContacts() {
+		try {
+			BorderPane contacts = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/ContactsView.fxml"));
+			Stage stage = new Stage();
+			Scene scene = new Scene(contacts);
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

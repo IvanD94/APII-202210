@@ -22,6 +22,11 @@ public class MainController {
 		main.showHistorial();
 	}
 	
+	@FXML
+	public void showContacts() {
+		main.showContacts();
+	}
+	
 	public void setMain(Main main) {
 		this.main = main;
 	}
