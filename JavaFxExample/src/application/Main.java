@@ -31,14 +31,21 @@ public class Main extends Application {
 		}
 	}
 	
+	@Override
+	public void stop() throws Exception {
+		System.out.println("Closing");
+		super.stop();
+	}
+	
 	public void showLogin() {	
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/Login.fxml"));
-			
 			BorderPane root;
+			
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/Login.fxml"));
 			root = (BorderPane)loader.load();
 			LoginController controller = loader.getController();
 			controller.setMain(this);
+
 			controller.setUsers(users);
 			
 			Scene scene = new Scene(root);

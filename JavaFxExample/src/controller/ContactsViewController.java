@@ -35,7 +35,8 @@ public class ContactsViewController {
 		
 		ObservableList<Contact> contacts = FXCollections.observableArrayList(contactsModel);
 		
-		contactsTable.setItems(contacts);		
+		contactsTable.setItems(contacts);
+		
 	}
 	
 	@FXML

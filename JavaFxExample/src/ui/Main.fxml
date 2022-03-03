@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
@@ -11,7 +12,19 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="75.0" layoutY="92.0" text="Welcome" />
+            <RadioButton layoutX="32.0" layoutY="20.0" mnemonicParsing="false" text="RadioButton1.1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="G1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="32.0" layoutY="51.0" mnemonicParsing="false" text="RadioButton1.2" toggleGroup="$G1" />
+            <RadioButton layoutX="32.0" layoutY="100.0" mnemonicParsing="false" text="RadioButton2.1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="G2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="32.0" layoutY="130.0" mnemonicParsing="false" text="RadioButton2.2" toggleGroup="$G2" />
+            <RadioButton layoutX="32.0" layoutY="158.0" mnemonicParsing="false" text="RadioButton2.3" toggleGroup="$G2" />
          </children>
       </AnchorPane>
    </center>
