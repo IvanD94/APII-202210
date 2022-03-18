@@ -16,6 +16,12 @@ public class Main {
 		printList();
 		contactList.sortByLastName();
 		printList();
+		contactList.sortCollectionsComparatorByNameAsc();
+		printList();
+		contactList.sortCollectionsComparatorByLastNameDes();
+		printList();
+		contactList.sortComparatorClass();
+		printList();
 
 		
 	}

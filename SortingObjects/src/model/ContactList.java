@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ContactList {
@@ -19,6 +21,7 @@ public class ContactList {
 		return contacts;
 	}
 	
+	//Bubble modificado para usar un comparador personalizado
 	public void sortByAge() {
 		int n = contacts.size();
 		boolean inversion = true;
@@ -36,6 +39,7 @@ public class ContactList {
 	    }
 	}
 	
+	//Bubble modificado para usar un comparador personalizado
 	public void sortByLastName() {
 		int n = contacts.size();
 		boolean inversion = true;
@@ -51,6 +55,55 @@ public class ContactList {
 	    		}
 	    	}
 	    }
+	}
+	
+	
+	public void sortCollectionsNaturalOrder() {
+		// Orderna de acuerdo al orden natural, definido en el compareTo de la clase
+		// sort siempre ordena de menor a mayor
+		Collections.sort(contacts);
+	}
+
+	public void sortByAgeAsc() {
+		Collections.sort(contacts, 
+				//Clase anonima comparator
+				new Comparator<Contact>() {
+					//Criterio personalizado
+					@Override
+					public int compare(Contact o1, Contact o2) {
+						return o1.getAge() - o2.getAge();
+					}
+		});
+	}
+	
+	public void sortCollectionsComparatorByNameAsc() {
+		Collections.sort(contacts, 
+				//Otra clase anonima
+				new Comparator<Contact>() {
+					//Otro criterio personalizado
+					@Override
+					public int compare(Contact o1, Contact o2) {
+						return o1.getName().compareTo(o2.getName());
+					}
+		
+		});
+	}
+	
+	public void sortCollectionsComparatorByLastNameDes() {
+		Collections.sort(contacts, new Comparator<Contact>() {
+			// Para ordernar descendente, se debe implementar la comparacion para "confundir" al sort
+			@Override
+			public int compare(Contact o1, Contact o2) {
+				return o2.getLastName().compareTo(o1.getLastName());
+				//return -1 * o1.getLastName().compareTo(o2.getLastName());
+			}
+			
+		});
+	}
+	
+	public void sortComparatorClass() {
+		//Order con clase no anonima comparator
+		Collections.sort(contacts, new ContacComparator());		
 	}
 	
 }

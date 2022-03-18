@@ -1,6 +1,7 @@
 package model;
 
-public class Contact {
+//Implementar comparable permite usar el sort y definir un orden natural de los objetos
+public class Contact implements Comparable<Contact>{
 
 	private String name;
 	private String lastName;
@@ -36,6 +37,7 @@ public class Contact {
 		this.age = age;
 	}
 
+	//Metodo comparador personalizado para modificar ordenamientos
 	public int compareByAge(Contact other) {
 		int result = 0;
 		if (this.age < other.getAge()) {
@@ -48,7 +50,24 @@ public class Contact {
 		// return this.age - other.getAge();
 	}
 	
+	//Metodo comparador personalizado 2 para modificar ordenamientos
 	public int compareByLastName(Contact other) {
+		int result = 0;
+		result = this.lastName.compareTo(other.lastName);
+
+		return result;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return name + " " + lastName + " " + age;
+	}
+
+	//Orden natural de la clase
+	//Metodo de la interfaz comparable
+	@Override
+	public int compareTo(Contact other) {
 		int result = 0;
 		result = this.lastName.compareTo(other.lastName);
 		
@@ -60,12 +79,6 @@ public class Contact {
 			result = this.age - other.getAge();
 		}
 		return result;
-	}
-	
-	
-	@Override
-	public String toString() {
-		return name + " " + lastName + " " + age;
 	}
 	
 }
