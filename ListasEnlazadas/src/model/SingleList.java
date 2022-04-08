@@ -52,4 +52,43 @@ public class SingleList {
 		
 		return "[" + first + "]";
 	}
+	
+	public boolean search(int item) {
+		if (first == null) {
+			return false;
+		} else {
+			return first.searchNode(item);
+		}
+	}
+	
+	public boolean delete(int item) {
+		if (first == null) {
+			return false;
+		} else if (first.getValue() == item) {
+			first = first.getNext();
+			return true;
+		} else {
+			return first.deleteNode(item);
+		}
+	}
+	
+	public boolean deleteIter(int item) {
+		if (first == null) {
+			return false;
+		} else if (first.getValue() == item) {
+			first = first.getNext();
+			return true;
+		} else {
+			NodeSingleList temp = first;
+			while (temp.getNext() != null) {
+				if (temp.getNext().getValue() == item) {
+					temp.setNext(temp.getNext().getNext());
+					return true;
+				}
+				temp = temp.getNext();
+			}
+			return false;			
+		}
+	}
+	
 }

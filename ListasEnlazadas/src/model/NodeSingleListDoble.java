@@ -1,11 +1,11 @@
 package model;
 
-public class NodeSingleList {
+public class NodeSingleListDoble {
 
 	private int value;
-	private NodeSingleList next;
+	private NodeSingleListDoble next;
 
-	public NodeSingleList(int value) {
+	public NodeSingleListDoble(int value) {
 		this.setValue(value);
 	}
 
@@ -17,23 +17,14 @@ public class NodeSingleList {
 		this.value = value;
 	}
 
-	public NodeSingleList getNext() {
+	public NodeSingleListDoble getNext() {
 		return next;
 	}
 
-	public void setNext(NodeSingleList next) {
+	public void setNext(NodeSingleListDoble next) {
 		this.next = next;
 	}
 
-	public void addNext(int value) {
-		if (next == null) {
-			next = new NodeSingleList(value);
-		} else {
-			next.addNext(value);
-		}
-	}
-
-	// [3, 4, 5, 6]
 	@Override
 	public String toString() {
 		String ans = value + "";
