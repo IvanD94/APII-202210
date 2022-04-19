@@ -1,27 +1,34 @@
 package main;
 
+import model.DoubleList;
 import model.LinkList;
 import model.SingleList;
 
 public class Main {
 
 	public static void main(String[] args) {
-		SingleList list = new SingleList();
+		DoubleList list = new DoubleList();
+		System.out.println(list.search(0) + "\n");
+		System.out.println(list.delete(0) + "\n");
+		System.out.println(list + "\n");
+		list.add(3);
+		System.out.println(list.search(0));
+		System.out.println(list.search(3) + "\n");
 		System.out.println(list.delete(0));
-		System.out.println(list.toStIterr() + "\n");
-		list.addRecur(3);
-		System.out.println(list.delete(0));
-		System.out.println(list.delete(3));
-		System.out.println(list.toStIterr() + "\n");
-		list.addRecur(4);
-		list.addRecur(5);
-		list.addRecur(6);
+		System.out.println(list.delete(3) + "\n");
+		System.out.println(list + "\n");
+		list.add(4);
+		list.add(5);
+		list.add(6);
+		System.out.println(list.search(0));
+		System.out.println(list.search(5) + "\n");
 		System.out.println(list.delete(0));
 		System.out.println(list.delete(5));
-		System.out.println(list.delete(6));
-		System.out.println(list.toStIterr() + "\n");
-		list.addIter(7);
-		System.out.println(list.toStIterr() + "\n");
+		System.out.println(list.delete(6) + "\n");
+		System.out.println(list + "\n");
+		list.add(7);
+		list.add(8);
+		System.out.println(list + "\n");
 		
 		System.out.println("End");
 	}
