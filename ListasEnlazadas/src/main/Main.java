@@ -1,13 +1,11 @@
 package main;
 
-import model.DoubleList;
-import model.LinkList;
-import model.SingleList;
+import model.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		DoubleList list = new DoubleList();
+		DoubleListDouble list = new DoubleListDouble();
 		System.out.println(list.search(0) + "\n");
 		System.out.println(list.delete(0) + "\n");
 		System.out.println(list + "\n");
