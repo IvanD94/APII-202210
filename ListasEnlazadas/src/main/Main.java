@@ -5,7 +5,7 @@ import model.*;
 public class Main {
 
 	public static void main(String[] args) {
-		DoubleListDouble list = new DoubleListDouble();
+		SingleList list = new SingleList();
 		System.out.println(list.search(0) + "\n");
 		System.out.println(list.delete(0) + "\n");
 		System.out.println(list + "\n");

@@ -8,6 +8,10 @@ public class SingleList {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public void add(int value) {
+		addIter(value);
+	}
+	
 	public void addIter(int value) {
 		NodeSingleList newNode = new NodeSingleList(value);
 		if(first == null) {

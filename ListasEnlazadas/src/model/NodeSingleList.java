@@ -39,7 +39,7 @@ public class NodeSingleList {
 		String ans = value + "";
 
 		if (next != null) {
-			ans += ", " + next;
+			ans = next.toString() + ", " + value;
 		}
 
 		return ans;
