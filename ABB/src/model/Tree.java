@@ -31,6 +31,14 @@ public class Tree {
 		}
 	}
 	
+	public boolean search(double value) {
+		if (root != null) {
+			return root.searchNode(value);
+		} else {
+			return false;
+		}
+	}
+	
 	public int size() {
 		if (root == null) {
 			return 0;
@@ -45,6 +53,28 @@ public class Tree {
 		} else {
 			return root.countLeafts();
 		}
-	}	
+	}
+	
+	public String inOrder() {
+		if (root == null) {
+			return "[]";
+		}else {
+			return "[" + root.inOrder() + "]"; 
+		}
+	}
+	
+	public boolean delete(double toDelete) {
+		
+		if (root == null) {
+			return false;
+		}else {
+			boolean found = search(toDelete);
+			if (found) {
+				root = root.delete(toDelete);
+			}
+			return found;
+		}
+		
+	}
 
 }
